@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--注解说明-->
+    <context:annotation-config/>
+    <!--把标记了@Controller注解的类转换为bean-->
+    <context:component-scan base-package="com.mkfree.**"/>
+    <!--redis工厂-->
+    <bean id="jedisConnectionFactory"
+          class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
+          p:hostName="127.0.0.1" p:port="6379" />
+    <!--redis服务封装-->
+    <bean id="redisService" class="com.mkfree.RedisService"/>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
